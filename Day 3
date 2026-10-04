@@ -1,0 +1,252 @@
+JAVA DSA – Day 3
+Functions & First Java Program
+1. Function (Method)
+A Function is a block of reusable code designed to perform a specific task. It helps divide a large program into smaller and manageable parts, making the code easier to understand, maintain and reuse.
+In Java, functions are generally called Methods because they are defined inside a class.
+- A method performs a specific task whenever it is called.
+- It helps reduce code repetition.
+- It makes programs modular and organized.
+- A method can accept inputs through parameters.
+- A method can return a result using the return keyword.
+- A method executes only when it is called (except special cases such as constructors).
+Example 1: Simple Method
+class Demo {
+
+    static void greet() {
+        System.out.println("Hello, Welcome to Java!");
+    }
+
+    public static void main(String[] args) {
+        greet();
+    }
+}
+
+
+Output:
+Hello, Welcome to Java!
+
+
+Explanation:
+- greet() is a method that performs the task of displaying a message.
+- We call the method inside main() using greet();.
+- Whenever we call this method, its code gets executed.
+2. Types of Methods Based on Parameters and Return Values
+Java methods can be classified into four common categories based on whether they accept parameters and return a value.
+1. No Parameters – No Return Value
+A method that does not accept any input and does not return any value.
+static void add() {
+    int a = 10, b = 20;
+    System.out.println(a + b);
+}
+
+
+Output:
+30
+
+
+2. Parameters – No Return Value
+A method that accepts input through parameters but does not return any value.
+static void add(int a, int b) {
+    System.out.println(a + b);
+}
+
+
+Method call:
+add(10, 20);
+
+
+Output:
+30
+
+
+3. No Parameters – Return Value
+A method that does not accept any input but returns a value.
+static int getNumber() {
+    return 100;
+}
+
+
+Method call:
+int result = getNumber();
+System.out.println(result);
+
+
+Output:
+100
+
+
+4. Parameters – Return Value
+A method that accepts input and returns the calculated result.
+static int multiply(int a, int b) {
+    return a * b;
+}
+
+
+Method call:
+int result = multiply(5, 4);
+System.out.println(result);
+
+
+Output:
+20
+
+
+3. First Java Program
+Let's understand your first Java program line by line.
+class Main {
+
+    public static void main(String[] args) {
+
+        IO.println("Hello World");
+
+    }
+}
+
+
+Output:
+Hello World
+
+
+Explanation of Each Component
+1. class Main
+- A class is a blueprint or template used to define objects, variables and methods in Java.
+- Java programs organize their code inside classes.
+- Here, Main is the name of our class.
+- By convention, class names start with a capital letter.
+2. public
+- It is an access modifier.
+- It allows the JVM or other classes to access the main() method.
+- It makes the method accessible from outside its class.
+3. static
+- It allows the JVM to call the main() method without creating an object of the class.
+- Static methods belong to the class rather than individual objects.
+4. void
+- It is the return type of the method.
+- It indicates that the main() method does not return any value.
+5. main()
+- It is the entry point of a conventional Java application.
+- Program execution begins from the main() method when launched using the traditional Java launcher.
+- It is called by the JVM through the Java launcher.
+6. String[] args
+- It is an array of String values used to receive command-line arguments.
+- args is simply the variable name; you can use another valid name.
+- It allows users to pass information while starting a Java program.
+Example:
+java Main Abhishek 100
+
+
+Here:
+- args[0] = Abhishek
+- args[1] = 100
+7. IO.println()
+- It is used to display output on the console.
+- It is part of Java's newer simplified I/O feature.
+- It is available in Java 25 as a standard feature.
+- It is not the traditional way of printing output in Java.
+4. Different Ways to Print Output in Java
+Java provides different methods to display output.
+1. System.out.println()
+Prints the output and moves the cursor to the next line.
+System.out.println("Hello");
+System.out.println("Java");
+
+
+Output:
+Hello
+Java
+
+
+2. System.out.print()
+Prints the output without moving the cursor to the next line.
+System.out.print("Hello ");
+System.out.print("Java");
+
+
+Output:
+Hello Java
+
+
+3. System.out.printf()
+Used to display formatted output using format specifiers.
+int age = 22;
+System.out.printf("My age is %d", age);
+
+
+Output:
+My age is 22
+
+
+Common format specifiers:
+Specifier	Data Type
+%d	Integer
+%f	Floating-point
+%c	Character
+%s	String
+%b	Boolean
+4. IO.println()
+A simplified output method available through Java's IO class.
+IO.println("Hello World");
+IO.println(100);
+IO.println(10 + 20);
+
+
+Output:
+Hello World
+100
+30
+
+
+Important: IO.println() is a Java 25 feature. If you are using older Java versions such as Java 17 or Java 21, use System.out.println() instead.
+5. Complete Example – Creating and Calling Multiple Methods
+class Main {
+
+    static void greet() {
+        System.out.println("Welcome to Java DSA");
+    }
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    static int square(int n) {
+        return n * n;
+    }
+
+    public static void main(String[] args) {
+
+        greet();
+
+        int sum = add(10, 20);
+        System.out.println("Sum = " + sum);
+
+        int result = square(5);
+        System.out.println("Square = " + result);
+    }
+}
+
+
+Output:
+Welcome to Java DSA
+Sum = 30
+Square = 25
+
+
+What did we learn?
+- greet() displays a message.
+- add() accepts two numbers and returns their sum.
+- square() accepts a number and returns its square.
+- main() calls all three methods.
+
+Important Points to Remember
+Concept	Main Purpose
+Function / Method	Performs a specific task
+Parameters	Receive input in a method
+Return	Sends a result back
+Static	Allows calling a method without creating an object
+Void	Indicates no return value
+Main Method	Conventional Java application entry point
+String[] args	Receives command-line arguments
+println()	Prints output with a new line
+print()	Prints output on the same line
+printf()	Prints formatted output
+IO.println()	Simplified output feature in Java 25
